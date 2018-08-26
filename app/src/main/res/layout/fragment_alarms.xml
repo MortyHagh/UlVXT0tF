@@ -48,7 +48,8 @@
                 android:textSize="65sp"
                 android:textStyle="bold"
                 android:typeface="sans"
-                android:visibility="visible" />
+                android:visibility="visible"
+                tools:text="Hello World!" />
 
             <Button
                 android:id="@+id/time_pick_toggle"
