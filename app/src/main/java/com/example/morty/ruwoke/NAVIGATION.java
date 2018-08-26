@@ -15,7 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class NAVIGATION extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +45,7 @@ public class NAVIGATION extends AppCompatActivity
         setTitle("Alarms");
         Alarms fragment = new Alarms();
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.frame, fragment);
+        fragmentTransaction.replace(R.id.frame, fragment, "Alarms");
         fragmentTransaction.commit();
     }
 
@@ -91,21 +91,21 @@ public class NAVIGATION extends AppCompatActivity
         if (id == R.id.nav_alarms) {
             setTitle("Alarms");
             Alarms fragment = new Alarms();
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frame, fragment);
-            fragmentTransaction.commit();
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.frame, fragment,"Alarms");
+            transaction.commit();
 
         } else if (id == R.id.nav_contacts) {
             setTitle("Contacts");
             Contacts fragment = new Contacts();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frame, fragment);
+            fragmentTransaction.replace(R.id.frame, fragment, "Contacts");
             fragmentTransaction.commit();
         } else if (id == R.id.nav_settings) {
             setTitle("Settings");
             Settings fragment = new Settings();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frame, fragment);
+            fragmentTransaction.replace(R.id.frame, fragment, "Settings");
             fragmentTransaction.commit();
         }
 
