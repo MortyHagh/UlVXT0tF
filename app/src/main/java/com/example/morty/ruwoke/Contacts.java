@@ -61,7 +61,8 @@ public class Contacts extends Fragment {
                 contactPhone = phoneEdit.getText().toString().trim();
                 contactName = nameEdit.getText().toString().trim();
 
-                TextSender.sendSMS(contactPhone,"Test message");
+                TextSender ts = new TextSender();
+                ts.sendSMS(getActivity(),contactPhone,"Test message");
             }
         });
         return v;
