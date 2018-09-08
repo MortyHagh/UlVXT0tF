@@ -6,6 +6,8 @@ import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.os.Bundle;
@@ -19,6 +21,7 @@ import android.widget.TimePicker;
 import java.util.Calendar;
 
 public class TimePickerFragment extends DialogFragment implements TimePickerDialog.OnTimeSetListener {
+
     @NonNull
     @Override
 
@@ -46,7 +49,12 @@ public class TimePickerFragment extends DialogFragment implements TimePickerDial
         Intent intent = new Intent(getActivity(), AlertReceiver.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(getActivity(), 1, intent, 0);
 
+
+        if (c.before(Calendar.getInstance())) {
+            c.add(Calendar.DATE, 1);
+        }
         alarmManager.setExact(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
+
     }
 
     private void CanelAlarm ()
