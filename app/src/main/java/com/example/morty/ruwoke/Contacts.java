@@ -91,7 +91,7 @@ public class Contacts  extends Fragment {
         ContentResolver cr = getActivity().getContentResolver();
         Cursor cursor = cr.query(ContactsContract.Contacts.CONTENT_URI,null,null,null,null);
 
-        if(cursor.getCount() > 0) {
+        if(cursor.getColumnCount() > 0) {
             String id = cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts._ID));
             String name = cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
             int hasPhoneNumber = Integer.parseInt(cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER)));
