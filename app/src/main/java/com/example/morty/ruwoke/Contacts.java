@@ -60,6 +60,8 @@ public class Contacts extends Fragment {
             public void onClick(View v) {
                 contactPhone = phoneEdit.getText().toString().trim();
                 contactName = nameEdit.getText().toString().trim();
+
+                TextSender.sendSMS(contactPhone,"Test message");
             }
         });
         return v;
