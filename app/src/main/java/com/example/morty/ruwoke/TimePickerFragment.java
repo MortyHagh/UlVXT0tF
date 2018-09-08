@@ -1,7 +1,11 @@
 package com.example.morty.ruwoke;
 
+import android.app.AlarmManager;
 import android.app.Dialog;
+import android.app.PendingIntent;
 import android.app.TimePickerDialog;
+import android.content.Context;
+import android.content.Intent;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.os.Bundle;
@@ -28,6 +32,29 @@ public class TimePickerFragment extends DialogFragment implements TimePickerDial
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
         Log.i("ontimesetcheck", "User Input came through");
         Alarms fragment1 = (Alarms) getActivity().getSupportFragmentManager().findFragmentByTag("Alarms");
-        fragment1.alarmtext.setText("Current Alarm:\n"+hourOfDay + ":" + minute);
+        fragment1.alarmtext.setText("Current Alarm:\n" + hourOfDay + ":" + minute);
+        Calendar c = Calendar.getInstance();
+        c.set(Calendar.HOUR_OF_DAY, hourOfDay);
+        c.set(Calendar.MINUTE, minute);
+        c.set(Calendar.SECOND, 0);
+        StartAlarm(c);
+    }
+
+    private void StartAlarm(Calendar c) {
+
+        AlarmManager alarmManager = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(getActivity(), AlertReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(getActivity(), 1, intent, 0);
+
+        alarmManager.setExact(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
+    }
+
+    private void CanelAlarm ()
+    {
+        AlarmManager alarmManager = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(getActivity(), AlertReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(getActivity(), 1, intent, 0);
+
+        alarmManager.cancel(pendingIntent);
     }
 }
