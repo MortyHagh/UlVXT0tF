@@ -15,5 +15,9 @@ public class AlertReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         Log.e("Alarm_Trigger", "Alarm is Triggered");
+
+        Intent service_intent = new Intent(context, RingtonePlayingService.class);
+        context.startService(service_intent);
+
     }
 }
