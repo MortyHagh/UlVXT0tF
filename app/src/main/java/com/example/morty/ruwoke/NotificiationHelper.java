@@ -18,8 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-//Jennifer helped.
-
 public class NotificiationHelper extends ContextWrapper {
     public static final String channel2ID = "channel2ID";
     public static final String channe2Name = "Channel 2";

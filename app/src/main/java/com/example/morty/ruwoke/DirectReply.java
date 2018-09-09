@@ -1,13 +1,10 @@
 package com.example.morty.ruwoke;
 
-import android.app.ActivityManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.RemoteInput;
 import android.util.Log;
@@ -35,6 +32,8 @@ public String contact_Phone,contact_Name;
                RingtonePlayingService.media_song.stop();
                Message RUWOKE_Alarm_Cancelled = new Message("Alarm is Dismissed.", null);
                NotificiationHelper.MESSAGES.add(RUWOKE_Alarm_Cancelled);
+
+
            }
            else {
                SharedPreferences pref = context.getSharedPreferences("MyPrefs", context.MODE_PRIVATE);

@@ -21,16 +21,9 @@ public class Contacts extends Fragment {
     ////////////////////////////////////////////////////////
     // This Code was made Possible by Brian DelRocini :) //
     //////////////////////////////////////////////////////
-    //ListView contactList;
+
     EditText nameEdit, phoneEdit;
     public String contactPhone, contactName;
-    long contactNumbers;
-    //Listview listView;
-
-
-    public Contacts() {
-        // Required empty public constructor
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -77,8 +70,6 @@ public class Contacts extends Fragment {
 
 // Commit the changes
                 edit.commit();
-               // TextSender ts = new TextSender();
-                //ts.sendSMS(contactPhone,"Test message");
             }
         });
         return v;

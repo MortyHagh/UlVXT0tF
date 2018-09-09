@@ -19,11 +19,6 @@ import android.widget.TimePicker;
  */
 public class Alarms extends Fragment {
 
-
-
-    public Alarms() {
-        // Required empty public constructor
-    }
     private static final String TAG = "Alarms";
     public TextView alarmtext;
     private Button time_pick;
