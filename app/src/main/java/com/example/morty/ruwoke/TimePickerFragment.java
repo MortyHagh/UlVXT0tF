@@ -7,6 +7,7 @@ import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 import android.widget.EditText;
@@ -44,6 +45,10 @@ public class TimePickerFragment extends DialogFragment implements TimePickerDial
         SimpleDateFormat format = new SimpleDateFormat("hh:mm");
         fragment1.alarmtext.setText("Current Alarm\n" + format.format(c.getTime()));
         StartAlarm(c);
+        SharedPreferences pref = getActivity().getSharedPreferences("MyPrefs", getActivity().MODE_PRIVATE);
+        SharedPreferences.Editor edit = pref.edit();
+        edit.putInt("SnoozeLimit",0);
+        edit.commit();
 
     }
 
@@ -59,6 +64,8 @@ public class TimePickerFragment extends DialogFragment implements TimePickerDial
         }
         alarmManager.setExact(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
 
+
+
     }
 
     public void CancelAlarm ()
@@ -68,6 +75,7 @@ public class TimePickerFragment extends DialogFragment implements TimePickerDial
         PendingIntent pendingIntent = PendingIntent.getBroadcast(getActivity(), 1, intent, 0);
 
         alarmManager.cancel(pendingIntent);
+        Log.e("CancelStatus", "Alarm Cancelled");
     }
 
 }

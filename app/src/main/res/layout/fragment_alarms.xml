@@ -28,10 +28,9 @@
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.75">
+            app:layout_constraintVertical_bias="0.748">
 
             <TextView
                 android:id="@+id/current_alarm"
@@ -52,12 +51,12 @@
 
             <Button
                 android:id="@+id/time_pick_toggle"
-                android:layout_width="match_parent"
+                android:layout_width="139dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="0"
-                android:background="#845862a0"
-                android:text="Set/Edit Alarm" />
+                android:background="#845862a0" />
+
         </LinearLayout>
     </android.support.constraint.ConstraintLayout>
 </FrameLayout>

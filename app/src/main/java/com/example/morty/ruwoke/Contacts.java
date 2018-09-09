@@ -67,6 +67,7 @@ public class Contacts extends Fragment {
 // Store data. you may also use putFloat(), putInt(), putLong() as requirement
                 edit.putString("PhoneNumber",contactPhone);
                 edit.putString("ContactName",contactName);
+                edit.putInt("SnoozeLimit", 0);
 
 // Commit the changes
                 edit.commit();
