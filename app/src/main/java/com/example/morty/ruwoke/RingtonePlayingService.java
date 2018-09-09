@@ -9,7 +9,7 @@ import android.util.Log;
 
 public class RingtonePlayingService extends Service {
 
-    MediaPlayer media_song;
+    public static MediaPlayer media_song;
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
@@ -20,6 +20,7 @@ public class RingtonePlayingService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
 
         media_song = MediaPlayer.create(this, R.raw.star_wars_theme);
+        media_song.setLooping(true);
         media_song.start();
         Log.e("RingtoneService", "Ringing!!");
         return START_NOT_STICKY;

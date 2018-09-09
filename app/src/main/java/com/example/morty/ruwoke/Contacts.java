@@ -1,6 +1,8 @@
 package com.example.morty.ruwoke;
 
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
@@ -24,6 +26,7 @@ public class Contacts extends Fragment {
     public String contactPhone, contactName;
     long contactNumbers;
     //Listview listView;
+
 
     public Contacts() {
         // Required empty public constructor
@@ -61,8 +64,21 @@ public class Contacts extends Fragment {
                 contactPhone = phoneEdit.getText().toString().trim();
                 contactName = nameEdit.getText().toString().trim();
 
-                TextSender ts = new TextSender();
-                ts.sendSMS(getActivity(),contactPhone,"Test message");
+                Context context = getActivity(); // or getActivity(); in case of Fragments
+                SharedPreferences pref = context.getSharedPreferences(
+                        "MyPrefs", Context.MODE_PRIVATE);
+// Here we are passing a unique name identifier for preference and mode applicable
+                // We need an editor object to make changes
+                SharedPreferences.Editor edit = pref.edit();
+
+// Store data. you may also use putFloat(), putInt(), putLong() as requirement
+                edit.putString("PhoneNumber",contactPhone);
+                edit.putString("ContactName",contactName);
+
+// Commit the changes
+                edit.commit();
+               // TextSender ts = new TextSender();
+                //ts.sendSMS(contactPhone,"Test message");
             }
         });
         return v;

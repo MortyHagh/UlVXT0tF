@@ -1,6 +1,7 @@
 package com.example.morty.ruwoke;
 
 
+import android.app.Activity;
 import android.app.Notification;
 
 import android.app.NotificationManager;
@@ -24,7 +25,7 @@ public class AlertReceiver extends BroadcastReceiver {
         NotificationCompat.Builder nb = notificiationHelper.getChannelNotification("RUWOKE", "WAKE UP!!");
         notificiationHelper.getManager().notify(1, nb.build());
 
-
     }
+
 
 }

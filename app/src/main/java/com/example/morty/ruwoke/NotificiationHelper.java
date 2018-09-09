@@ -16,10 +16,17 @@ import android.support.v4.app.NotificationCompat;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+
+//Jennifer helped.
 
 public class NotificiationHelper extends ContextWrapper {
     public static final String channel2ID = "channel2ID";
     public static final String channe2Name = "Channel 2";
+    Random r = new Random();
+    Random f = new Random();
+    public static final int a = (int) (10 * Math.random()) + 1;
+    public static final int b = (int) (10 * Math.random()) + 1;
     private NotificationManager mManager;
     static List<com.example.morty.ruwoke.Message> MESSAGES = new ArrayList<>();
     public NotificiationHelper(Context base) {
@@ -67,6 +74,7 @@ public class NotificiationHelper extends ContextWrapper {
                 new NotificationCompat.MessagingStyle("Me");
         messagingStyle.setConversationTitle("RUWOKE Alarm");
 
+        MESSAGES.add(new com.example.morty.ruwoke.Message("Are you Awake? Try answering this question: " +a+" + "+b, "RUWOKE"));
         for (com.example.morty.ruwoke.Message chatMessage: MESSAGES){
             NotificationCompat.MessagingStyle.Message notificationMessage =
                     new NotificationCompat.MessagingStyle.Message(

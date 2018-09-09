@@ -12,8 +12,7 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/relativeLayout2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/alarm_bg">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:id="@+id/current_alarm_layout"
@@ -44,7 +43,7 @@
                 android:includeFontPadding="false"
                 android:text="Hello World!"
                 android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large.Inverse"
-                android:textColor="@android:color/background_light"
+                android:textColor="@android:color/black"
                 android:textSize="65sp"
                 android:textStyle="bold"
                 android:typeface="sans"

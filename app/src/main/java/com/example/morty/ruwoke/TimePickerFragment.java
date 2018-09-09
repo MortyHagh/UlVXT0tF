@@ -1,5 +1,6 @@
 package com.example.morty.ruwoke;
 
+import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.Dialog;
 import android.app.PendingIntent;
@@ -57,7 +58,7 @@ public class TimePickerFragment extends DialogFragment implements TimePickerDial
 
     }
 
-    private void CanelAlarm ()
+    public void CanelAlarm ()
     {
         AlarmManager alarmManager = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(getActivity(), AlertReceiver.class);
@@ -65,4 +66,5 @@ public class TimePickerFragment extends DialogFragment implements TimePickerDial
 
         alarmManager.cancel(pendingIntent);
     }
+
 }
