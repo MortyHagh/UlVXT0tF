@@ -1,14 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Settings">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Settings" />
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:text="I would like to dedicate this project to the hard work of my loyal team members, including Morteza Hagh, Matthew Chan, and Jennifer Huang. Their outstanding tenacity, grit, integrity, and perseverance inspired me to do the best work I could for our project and it was what truly made this application possible. "
+        android:textColor="#000000"
+        android:textColorLink="#000000"
+        android:textSize="16sp" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Additionally, I would like to extend my personal thanks to a Daniel Chong, an ECE Major at the Rutgers School of Engineering. His help can not be understated, as he was the genius behind the purple coloring of the header bar."
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:text="I would also like to acknowledge Joseph Shenouda, for being a handsome, capable, strong, fast, cunning, kind, gracious, and merciful gentleman who inspires confidence to all those he meets."
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:text="In memory for John Mulaney, for his apparent striking likeness to myself." />
+
+</LinearLayout>

@@ -104,7 +104,7 @@ public String contact_Phone,contact_Name;
         AlarmManager alarmManager_snooze = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         alarmManager_snooze.set(AlarmManager.RTC, nextUpdateTimeMillis, pendingIntent);
 
-        Toast.makeText(context, "Snoozed for a minute.",
+        Toast.makeText(context, "Snoozed for 30 seconds.",
                 Toast.LENGTH_LONG).show();
 
     }

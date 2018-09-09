@@ -107,10 +107,10 @@ public class NAVIGATION extends AppCompatActivity
             fragmentTransaction.replace(R.id.frame, fragment, "Contacts");
             fragmentTransaction.commit();
         } else if (id == R.id.nav_settings) {
-            setTitle("Settings");
+            setTitle("Dedications");
             Settings fragment = new Settings();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frame, fragment, "Settings");
+            fragmentTransaction.replace(R.id.frame, fragment, "Dedications");
             fragmentTransaction.commit();
         }
 

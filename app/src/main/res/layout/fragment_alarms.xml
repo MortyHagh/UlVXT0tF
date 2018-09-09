@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F08080    "
     tools:context=".Alarms">
 
     <!-- TODO: Update blank fragment layout -->
@@ -17,45 +18,61 @@
         <LinearLayout
             android:id="@+id/current_alarm_layout"
             android:layout_width="304dp"
-            android:layout_height="368dp"
-            android:layout_marginBottom="8dp"
+            android:layout_height="420dp"
+            android:layout_marginBottom="100dp"
             android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
             android:gravity="center_horizontal|center"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.748">
+            app:layout_constraintVertical_bias="0.75">
 
             <TextView
                 android:id="@+id/current_alarm"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="300dp"
                 android:layout_gravity="center|start"
                 android:layout_weight="2"
                 android:baselineAligned="false"
+                android:gravity="center"
                 android:includeFontPadding="false"
-                android:text="Hello World!"
+                android:text="Hello PennApps!"
                 android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large.Inverse"
                 android:textColor="@android:color/black"
-                android:textSize="65sp"
+                android:textSize="60sp"
                 android:textStyle="bold"
                 android:typeface="sans"
-                android:visibility="visible"
-                tools:text="Hello World!" />
+                android:visibility="visible" />
 
             <Button
                 android:id="@+id/time_pick_toggle"
-                android:layout_width="139dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="0"
-                android:background="#845862a0" />
+                android:background="@drawable/mybutton"
+                android:text="Set/Edit Alarm"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/cancel_alarm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_weight="0"
+                android:background="@drawable/mybutton"
+                android:text="Cancel Alarm"
+                android:visibility="gone"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
     </android.support.constraint.ConstraintLayout>

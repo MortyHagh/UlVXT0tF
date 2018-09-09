@@ -6,6 +6,7 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 
+import android.graphics.BitmapFactory;
 import android.os.Message;
 import android.support.v4.app.RemoteInput;
 import android.content.Context;
@@ -87,7 +88,8 @@ public class NotificiationHelper extends ContextWrapper {
                 .setStyle(messagingStyle)
                 .addAction(replyAction)
                 .setContentText(message)
-                .setSmallIcon(R.drawable.ic_launcher_background);
+                .setSmallIcon(R.drawable.ic_alarm)
+                .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.appicon));
 
     }
 
